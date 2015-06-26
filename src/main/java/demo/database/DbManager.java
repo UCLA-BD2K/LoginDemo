@@ -1,10 +1,6 @@
 package demo.database;
 
-import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
-
 import java.sql.Connection;
-import java.sql.Driver;
-import java.sql.DriverManager;
 import java.sql.SQLException;
 import javax.sql.DataSource;
 
@@ -13,11 +9,6 @@ import javax.sql.DataSource;
  */
 public class DbManager {
 
-    static private String databaseURL = "jdbc:mysql://localhost:3306/";
-    static private String dbname = "demo";
-    static private String username = "root";
-    static private String password = "12345678";
-    static private DataSource ds;
     static private Connection ReadOnlyConnection;
     static private Connection WritableConnection;
 

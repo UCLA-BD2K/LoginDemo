@@ -1,9 +1,7 @@
 package demo;
 
 import demo.database.userManager;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.GrantedAuthorityImpl;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -35,6 +33,7 @@ public class AuthUserDetailsService implements UserDetailsService{
             //Error getting user's password
         }
 
+        //getAuthorities(1) is hardcoded for now. Should be changed if Roles becomes important in the future
         UserDetails userdetails = new User(username, userPassword, enabled, accountNonExpired, credentialsNonExpired, accountNonLocked, getAuthorities(1));
 
         return userdetails;

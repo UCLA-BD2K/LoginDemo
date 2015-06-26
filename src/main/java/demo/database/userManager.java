@@ -69,7 +69,12 @@ public class userManager extends DbManager {
         return isValid;
     }
 
-    /*tmp */
+    /**
+     * Temporary method.
+     * @param email User's registered email address
+     * @return The password mapped to the given email address
+     * @throws SQLException
+     */
     public static String getUserPassword(String email) throws SQLException {
         Connection connection = null;
         PreparedStatement statement = null;
@@ -85,7 +90,12 @@ public class userManager extends DbManager {
         return null;
     }
 
-    /* tmp */
+    /**
+     * Temporary method.
+     * @param email User's registered email address
+     * @return The First and Last name for the user registered with the given email address
+     * @throws SQLException
+     */
     public static String getUsersName(String email) throws SQLException {
         Connection connection = null;
         PreparedStatement statement = null;

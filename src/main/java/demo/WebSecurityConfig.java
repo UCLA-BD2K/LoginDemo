@@ -19,8 +19,6 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 @Order(SecurityProperties.ACCESS_OVERRIDE_ORDER)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
-    /*@Autowired
-    private DataSource dataSource;*/
     @Autowired
     UserDetailsService userDS;
 
@@ -43,15 +41,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
         auth
-                /*.jdbcAuthentication()
-                .dataSource(DbManager.getDataSource())
-                .usersByUsernameQuery("select * from users where Username ?");*/
-                /*.jdbcAuthentication()
-                .dataSource(dataSource)
-                .withDefaultSchema();*/
-
-                /*.inMemoryAuthentication()
-                .withUser("user@user.com").password("password").roles("USER");*/
                 .userDetailsService(userDS);
     }
 

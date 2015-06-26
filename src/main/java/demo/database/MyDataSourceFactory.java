@@ -14,7 +14,7 @@ public class MyDataSourceFactory {
     static private MysqlConnectionPoolDataSource mysqlDS = new MysqlConnectionPoolDataSource();
 
     static {
-        mysqlDS.setURL(databaseURL + dbname + "?max-connections=4"); //Set max # Connections to 4
+        mysqlDS.setURL(databaseURL + dbname + "?max-connections=4"); //Set max # Connections to 4, suppose to be most efficient?
         mysqlDS.setUser(username);
         mysqlDS.setPassword(password);
     }

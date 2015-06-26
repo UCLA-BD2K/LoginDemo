@@ -24,14 +24,7 @@
             </div>
         </div>
     </nav>
-    <!--<p th:if="${loginError}">Wrong user or password</p>
-    <form th:action="@{/j_spring_security_check}" method="post">
-        <label for="j_username">Username</label>:
-        <input type="text" id="j_username" name="j_username" /> <br />
-        <label for="j_password">Password</label>:
-        <input type="password" id="j_password" name="j_password" /> <br />
-        <input type="submit" value="Log in" />
-    </form>-->
+
     <h1>Log in required</h1>
     <h1 th:if="${param.error}">Invalid username/password combination!</h1>
     <div id="login">
