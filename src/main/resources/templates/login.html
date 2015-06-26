@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Login</title>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"/>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <!-- End Bootstrap -->
+
+    <link rel="stylesheet" href="/css/style.css"/>
+</head>
+<body background="/assets/background.jpg">
+<div class="container">
+    <nav class="navbar navbar-default navbar-static-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/index.html">Index Page</a>
+                <a class="navbar-brand" href="/registerPage.html">Register</a>
+                <a class="navbar-brand" href="/login.html">Login</a>
+            </div>
+        </div>
+    </nav>
+    <!--<p th:if="${loginError}">Wrong user or password</p>
+    <form th:action="@{/j_spring_security_check}" method="post">
+        <label for="j_username">Username</label>:
+        <input type="text" id="j_username" name="j_username" /> <br />
+        <label for="j_password">Password</label>:
+        <input type="password" id="j_password" name="j_password" /> <br />
+        <input type="submit" value="Log in" />
+    </form>-->
+    <h1>Log in required</h1>
+    <h1 th:if="${param.error}">Invalid username/password combination!</h1>
+    <div id="login">
+        <form method="post" action="#" th:action="@{/login}" th:object="${user}">
+            <h2>Login</h2>
+            <p><label for="Email" class="sr-only">Email</label>
+            <input type="email" th:field="*{username}" id="Email" name="email" class="form-control" placeholder="Email address" required="required" autofocus="autofocus"/></p>
+            <p><label for="FN" class="sr-only">First Name</label>
+                <input type="text" th:field="*{firstName}" id="FN" name="firstName" class="form-control" placeholder="First Name" autofocus="autofocus"/></p>
+            <p><label for="LN" class="sr-only">Last Name</label>
+                <input type="text" th:field="*{lastName}" id="LN" name="lastName" class="form-control" placeholder="Last Name" autofocus="autofocus"/></p>
+            <p><label for="inputPassword" class="sr-only">Password</label>
+                <input type="password" th:field="*{password}" id="inputPassword" name="password" class="form-control" placeholder="Password" required="required" autofocus="autofocus"/></p>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Log in</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

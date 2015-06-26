@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"  xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8"/>
+    <title>Welcome Page</title>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"/>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <!-- End Bootstrap -->
+
+    <link rel="stylesheet" href="/css/style.css"/>
+</head>
+<body background="/assets/background.jpg">
+<div class="container">
+    <nav class="navbar navbar-default navbar-static-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/index.html">Index Page</a>
+            </div>
+        </div>
+    </nav>
+<h1 th:if="${param.error}">Invalid username/password</h1>
+<h1 th:text="${message} + ' ' + ${currentUser} + '!'">message didn't get passed</h1>
+</div>
+</body>
+</html>
